@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{477AD03F-CF46-4D25-988B-C5EF8BE17CFF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{1CF73F39-C0BF-4DEF-B0E7-858CEC7AF779}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.API", "src\Catalog\Catalog.API\Catalog.API.csproj", "{6F45F143-5A76-4E72-9564-F35E6AEACEA2}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{9D9DD2DD-5803-4974-98D2-B8042FE01F3D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F45F143-5A76-4E72-9564-F35E6AEACEA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F45F143-5A76-4E72-9564-F35E6AEACEA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F45F143-5A76-4E72-9564-F35E6AEACEA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F45F143-5A76-4E72-9564-F35E6AEACEA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D9DD2DD-5803-4974-98D2-B8042FE01F3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D9DD2DD-5803-4974-98D2-B8042FE01F3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D9DD2DD-5803-4974-98D2-B8042FE01F3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D9DD2DD-5803-4974-98D2-B8042FE01F3D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1CF73F39-C0BF-4DEF-B0E7-858CEC7AF779} = {477AD03F-CF46-4D25-988B-C5EF8BE17CFF}
+		{6F45F143-5A76-4E72-9564-F35E6AEACEA2} = {1CF73F39-C0BF-4DEF-B0E7-858CEC7AF779}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {60E6C4C2-3109-4DA9-AB41-08179F36C832}
+	EndGlobalSection
+EndGlobal
