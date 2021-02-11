@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\77071\\Source\\Repos\\MicroservicesApp2\\src\\Catalog\\Catalog.API\\Catalog.API.csproj": {}
+    "C:\\Users\\77071\\source\\repos\\MicroservicesApp2\\src\\Catalog\\Catalog.API\\Catalog.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\77071\\Source\\Repos\\MicroservicesApp2\\src\\Catalog\\Catalog.API\\Catalog.API.csproj": {
+    "C:\\Users\\77071\\source\\repos\\MicroservicesApp2\\src\\Catalog\\Catalog.API\\Catalog.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\77071\\Source\\Repos\\MicroservicesApp2\\src\\Catalog\\Catalog.API\\Catalog.API.csproj",
+        "projectUniqueName": "C:\\Users\\77071\\source\\repos\\MicroservicesApp2\\src\\Catalog\\Catalog.API\\Catalog.API.csproj",
         "projectName": "Catalog.API",
-        "projectPath": "C:\\Users\\77071\\Source\\Repos\\MicroservicesApp2\\src\\Catalog\\Catalog.API\\Catalog.API.csproj",
+        "projectPath": "C:\\Users\\77071\\source\\repos\\MicroservicesApp2\\src\\Catalog\\Catalog.API\\Catalog.API.csproj",
         "packagesPath": "C:\\Users\\77071\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\77071\\Source\\Repos\\MicroservicesApp2\\src\\Catalog\\Catalog.API\\obj\\",
+        "outputPath": "C:\\Users\\77071\\source\\repos\\MicroservicesApp2\\src\\Catalog\\Catalog.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

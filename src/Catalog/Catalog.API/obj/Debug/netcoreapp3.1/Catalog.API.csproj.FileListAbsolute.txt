@@ -30,3 +30,6 @@ C:\Users\77071\source\repos\MicroservicesApp2\src\Catalog\Catalog.API\bin\Debug\
 C:\Users\77071\source\repos\MicroservicesApp2\src\Catalog\Catalog.API\obj\Debug\netcoreapp3.1\Catalog.API.dll
 C:\Users\77071\source\repos\MicroservicesApp2\src\Catalog\Catalog.API\obj\Debug\netcoreapp3.1\Catalog.API.pdb
 C:\Users\77071\source\repos\MicroservicesApp2\src\Catalog\Catalog.API\obj\Debug\netcoreapp3.1\Catalog.API.genruntimeconfig.cache
+C:\Users\77071\source\repos\MicroservicesApp2\src\Catalog\Catalog.API\obj\Debug\netcoreapp3.1\Catalog.API.csproj.CoreCompileInputs.cache
+C:\Users\77071\source\repos\MicroservicesApp2\src\Catalog\Catalog.API\obj\Debug\netcoreapp3.1\Catalog.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\77071\source\repos\MicroservicesApp2\src\Catalog\Catalog.API\obj\Debug\netcoreapp3.1\Catalog.API.MvcApplicationPartsAssemblyInfo.cache
