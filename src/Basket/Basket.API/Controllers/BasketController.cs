@@ -45,5 +45,28 @@ namespace Basket.API.Controllers
             return Ok(await _repository.DeleteBasket(username));
         }
 
+        [Route("[action]")]
+        [HttpPost]
+        [ProducesResponseType(typeof(void), (int)HttpStatusCode.Created)]
+        [ProducesResponseType(typeof(void), (int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> Checkout([FromBody] BasketCheckout basketCheckout)
+        {
+            var basket = await _repository.GetBasket(basketCheckout.Username);
+            if(basket == null)
+            {
+                _logger.LogError("Basket could not be found for user: " + basketCheckout.Username);
+                return BadRequest();
+            }
+
+            var removed = await _repository.DeleteBasket(basketCheckout.Username);
+            if(!removed)
+            {
+                _logger.LogError("Basket could not be removed for user: " + basketCheckout.Username);
+                return BadRequest();
+            }
+
+            
+        }
+
     }
 }
