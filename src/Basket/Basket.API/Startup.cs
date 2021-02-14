@@ -15,6 +15,9 @@ using StackExchange.Redis;
 using Microsoft.OpenApi.Models;
 using Basket.API.Repositories.Interfaces;
 using Basket.API.Repositories;
+using EventBusRabbitMQ;
+using RabbitMQ.Client;
+using EventBusRabbitMQ.Producers;
 
 namespace Basket.API
 {
@@ -42,6 +45,7 @@ namespace Basket.API
             #region Project Dependencies
             services.AddTransient<IBasketCartContext, BasketCartContext>();
             services.AddTransient<IBasketCartRepository, BasketCartRepository>();
+            services.AddAutoMapper(typeof(Startup));
             #endregion
 
             #region Swagger Dependencies
@@ -49,6 +53,23 @@ namespace Basket.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Redis basket", Version = "v1" });
             });
+            #endregion
+
+            #region RabbitMQ Dependencies
+            services.AddSingleton<IRabbitMQConnection>(s =>
+            {
+                var factory = new ConnectionFactory()
+                {
+                    HostName = Configuration["EventBus:HostName"]
+                };
+
+                factory.UserName = Configuration["EventBus:Username"];
+                factory.Password = Configuration["EventBus:Password"];
+
+                return new RabbitMQConnection(factory);
+            });
+
+            services.AddSingleton<EventBusRabbitMQProducer>();
             #endregion
         }
 

@@ -1,7 +1,9 @@
 ﻿using RabbitMQ.Client;
+using RabbitMQ.Client.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace EventBusRabbitMQ
 {
@@ -10,6 +12,7 @@ namespace EventBusRabbitMQ
         private readonly IConnectionFactory _connectionFactory;
         private IConnection _connection;
         private bool _disposed;
+
         public RabbitMQConnection(IConnectionFactory connectionFactory)
         {
             _connectionFactory = connectionFactory;
@@ -19,7 +22,13 @@ namespace EventBusRabbitMQ
             }
         }
 
-        public bool IsConnected => _connection != null && _connection.IsOpen && !_disposed;
+        public bool IsConnected
+        {
+            get
+            {
+                return _connection != null && _connection.IsOpen && !_disposed;
+            }
+        }
 
         public bool TryConnect()
         {
@@ -27,34 +36,47 @@ namespace EventBusRabbitMQ
             {
                 _connection = _connectionFactory.CreateConnection();
             }
-            catch (Exception e)
+            catch (BrokerUnreachableException)
             {
-                Console.WriteLine("Connection failed: " + e.Message);
-                return false;
+                Thread.Sleep(2000);
+                _connection = _connectionFactory.CreateConnection();
             }
 
             if (IsConnected)
             {
-                Console.WriteLine("Connection acquired!");
+                Console.WriteLine("RabbitMQ connection acquired");
                 return true;
             }
             else
             {
-                Console.WriteLine("Error: Connection cannot be reached!");
+                Console.WriteLine("Error: RabbitMQ connection failed");
                 return false;
             }
         }
 
-        public IModel CreateConnect()
+        public IModel CreateModel()
         {
-            throw new NotImplementedException();
+            if (!IsConnected)
+            {
+                throw new InvalidOperationException("Error: RabbitMQ Connection is not open");
+            }
+
+            return _connection.CreateModel();
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            if (_disposed) return;
+
+            try
+            {
+                _connection.Dispose();
+                _disposed = true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
         }
-
-
     }
 }

@@ -8,6 +8,8 @@ services:
       build:
           context: .
           dockerfile: src/Basket/Basket.API/Dockerfile
+  rabbitmq: 
+      image: rabbitmq:3-management-alpine
   catalogdb:
       image: mongo
   catalog.api:

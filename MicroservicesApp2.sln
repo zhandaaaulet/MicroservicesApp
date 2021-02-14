@@ -14,10 +14,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{24E625AF-89C8-4017-9E26-4E4C7BB5EF9A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basket.API", "src\Basket\Basket.API\Basket.API.csproj", "{3CF14CAD-E1FC-48A2-AC96-FB453D7B0D45}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E57EA615-FF91-47A0-A5D3-C567B79615F8} = {E57EA615-FF91-47A0-A5D3-C567B79615F8}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{2249075A-4AAE-40D2-B605-A9A38ADDBDF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBusRabbitMQ", "src\Common\EventBusRabbitMQ\EventBusRabbitMQ.csproj", "{E57EA615-FF91-47A0-A5D3-C567B79615F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBusRabbitMQ", "src\Common\EventBusRabbitMQ\EventBusRabbitMQ.csproj", "{E57EA615-FF91-47A0-A5D3-C567B79615F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

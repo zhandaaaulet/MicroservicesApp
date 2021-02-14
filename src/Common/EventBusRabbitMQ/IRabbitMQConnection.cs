@@ -7,6 +7,6 @@ namespace EventBusRabbitMQ
     {
         bool IsConnected { get; }
         bool TryConnect();
-        IModel CreateConnect();
+        IModel CreateModel();
     }
 }
