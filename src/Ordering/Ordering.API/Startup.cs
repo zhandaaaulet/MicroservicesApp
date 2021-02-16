@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EventBusRabbitMQ;
+using EventBusRabbitMQ.Producers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -49,7 +50,20 @@ namespace Ordering.API
             #endregion
 
             #region RabbitMQ Dependencies
+            services.AddSingleton<IRabbitMQConnection>(s =>
+            {
+                var factory = new ConnectionFactory()
+                {
+                    HostName = Configuration["EventBus:HostName"]
+                };
 
+                factory.UserName = Configuration["EventBus:Username"];
+                factory.Password = Configuration["EventBus:Password"];
+
+                return new RabbitMQConnection(factory);
+            });
+
+            services.AddSingleton<EventBusRabbitMQConsumer>();
             #endregion
 
             #region Swagger Dependencies

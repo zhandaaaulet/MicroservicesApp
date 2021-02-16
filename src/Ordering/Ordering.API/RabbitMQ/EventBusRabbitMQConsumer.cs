@@ -4,6 +4,7 @@ using EventBusRabbitMQ.Common;
 using EventBusRabbitMQ.Events;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
+using Ordering.API.DTOs;
 using Ordering.Core.Entities;
 using Ordering.Core.Repositories;
 using RabbitMQ.Client;
@@ -40,7 +41,10 @@ namespace Ordering.API.RabbitMQ
         {
             if (e.RoutingKey == EventBusConstants.BasketCheckoutQueue)
             {
-                throw new NotImplementedException();
+                var message = Encoding.UTF8.GetString(e.Body.Span);
+                var basketCheckoutEvent = JsonConvert.DeserializeObject<BasketCheckoutEvent>(message);
+                var consumer = _mapper.Map<OrderResponse>(basketCheckoutEvent);
+                
             }
         }
 
