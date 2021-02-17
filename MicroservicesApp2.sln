@@ -41,6 +41,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.Infrastructure", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.Application", "src\Ordering\Ordering.Application\Ordering.Application.csproj", "{295A5B6B-CF56-4206-B548-D14B4457E818}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApp", "WebApp", "{F78F56FF-9E9A-467F-B464-74B31A326FB1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,7 @@ Global
 		{39BC5987-1E91-461D-B00D-8A8E1C8C2D93} = {9FC9CB8C-357C-4921-811F-091364E934EF}
 		{CDDDF5B1-21C6-4CA8-8905-28F253E0C511} = {9FC9CB8C-357C-4921-811F-091364E934EF}
 		{295A5B6B-CF56-4206-B548-D14B4457E818} = {9FC9CB8C-357C-4921-811F-091364E934EF}
+		{F78F56FF-9E9A-467F-B464-74B31A326FB1} = {477AD03F-CF46-4D25-988B-C5EF8BE17CFF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {60E6C4C2-3109-4DA9-AB41-08179F36C832}
