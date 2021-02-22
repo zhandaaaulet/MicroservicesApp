@@ -30,7 +30,6 @@ services:
     tty: true
   catalog.api:
     image: catalogapi:dev
-    container_name: Catalog.API
     build:
       target: base
       labels:

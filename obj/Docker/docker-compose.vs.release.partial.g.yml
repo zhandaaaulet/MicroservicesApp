@@ -21,7 +21,6 @@ services:
       com.microsoft.visual-studio.project-name: "Basket.API"
     tty: true
   catalog.api:
-    container_name: Catalog.API
     build:
       labels:
         com.microsoft.created-by: "visual-studio"

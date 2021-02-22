@@ -17,3 +17,17 @@ services:
       build:
           context: .
           dockerfile: src/Catalog/Catalog.API/Dockerfile
+  orderdb:
+      image: postgres
+  ordering.api:
+      image: ${DOCKER_REGISTRY-}orderingapi
+      build:
+          context: .
+          dockerfile: src/Ordering.API/Dockerfile
+  ocelotapigateway:
+      image: ${DOCKER_REGISTRY-}ocelotapigateway
+      build:
+          context: .
+          dockerfile: src/APIGateway/OcelotAPIgateway/Dockerfile
+  
+
